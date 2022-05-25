@@ -1,0 +1,245 @@
+---
+title: "QTM 151 Project Proposal"
+author: "Christine Zhou, Echo Sui, Ruby Wu"
+date: "4/9/2021"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Instructions
+
+The class project is split into two parts. This is Part I - the Proposal. Part II, the project itself, is due at the end of the semester.
+
+The project is quite similar to what you did in QTM 150 (if you took it with me), just with some additional requirements/different focuses. 
+
+For the project you will work in groups of 3-4 to prepare a brief RMarkdown report using a data set of your choice to answer **at least one research question(s)** you're interested in investigating. The Canvas Project module has an example of a prior project to help guide what would be appropriate research question(s) vs. something that's too broad or too narrow, as well as several possible sources for datasets.
+
+The Proposal must include:
+
+1. The dataset you're using. Unlike in QTM 150, I'm not providing specific datasets for you to work with. Instead I've put a list of general places you might look on Canvas. It's up to you to identify a dataset that is un-tidy and requires enough cleaning to  meet the requirements of the final project.
+
+    The details of the project itself are provided below to help guide your choice of dataset and question.
+
+2. A description and *basic* exploration of the dataset. You should have a feel for how to do this by now, but basically make it clear what data the dataset contains, its structure and organization (for example, what are the variables, what's an observation), variable types, and basic summaries of numeric and categorical variables.
+
+    The description should include a **Data Dictionary** describing what each variable in the raw data (that is, the data you import) is. For more details on Data Dictionaries, SEE Tutorial 10.1. 
+
+3. The research question(s) you plan to answer, **and** the variables and methods (for example, tables or visualizations) you will use to answer them. I'm not looking for an essay here - just want enough to know you actually have at least a preliminary plan for answering your questions with the data you have.
+    
+    The details of the project itself are provided below to help guide your choice of dataset and question.
+    
+4. The cleaning you expect to have to do to your data to get it prepared to answer your questions.
+    
+The whole proposal shouldn't be much more than a couple of pages, including code output, and a couple hundred words or so. The data dictionary might make it a bit longer depending on the number of variables.
+
+The **ideal due date for this is April 9th.** Ideally you would have completed at least the **Data Cleaning: Strings** Tutorials and *skim* [Chapters 15 and 16 of *R for Data Science*](https://r4ds.had.co.nz/factors.html) first to help you make sure your proposal will fit the requirements of the project. Spend no more than 5-10 minutes on each of Chapters 15 and 16 for now - I just want you to get an idea of the types of things you can/might want to do with factors and dates.
+
+Unlike other assignments this has a hard, I-will-not-accept-it-later-than-this deadline of **April 16th**. This is not because I'm trying to be difficult, but because I want to make sure you have a workable plan for your project well ahead of time so you're not in trouble at the end of the semester! I want all of you to do well. Plus this will give you a jump on the final project, as everything listed above will be *part* of the final project anyway, so it's not extra work! It helps you pace yourself.
+
+Also note you are not completely locked into your data or questions. It'll just be more work on your part, and you should clear it with me.
+
+
+**To submit this assignment:**
+
+Ideally, knit straight to PDF by changing `html_document` to `pdf_document` in line 5 above. Otherwise:
+
+1. Knit to HTML. An HTML document should open automatically in another RStudio window.
+
+2. Click "Open in Browser" in that HTML document. It should open as a webpage in your default browser (e.g. Chrome).
+
+3. Click Ctrl+P/Command+P, but instead of printing a hard copy on your printer click "Save as PDF."
+
+4. Save and upload that document to Canvas.
+
+
+
+
+------PROJECT INSTRUCTIONS; NOT FOR YOU TO COMPLETE NOW --------
+
+
+The Project must include and will be graded as follows (20 total pts):
+
+1. Make sure to load any packages you may need right at the start. (0 pts)
+
+2. Ensure that no chunks have the `include = FALSE` or `echo = FALSE` option, as I want to be able to see *all* your code and output. (0 pts)
+
+3. Brief but descriptive headings and document organization (answers under headings, text near relevant code, brief explanatory text as necessary to walk the reader through what you did, etc.), as well as **brief bits of narrative text throughout the document to walk me through your cleaning and analytical process**. (5 pts)
+
+    Look to my HW1 and RMarkdown Organization examples from QTM 150 as well as my feedback throughout both courses for how to write good headings, organize your assignment, and how much narrative text (outside of code chunks) I want. A good rule of thumb for narrative text is: explain what *you're* doing, NOT what *your code* is doing. I want to be able to easily track what you're doing as you move through the analysis, and why. I do *not* need to see a repeat, line-by-line narration of what your code does.
+    
+    You can use code comments where necessary (complex code lines or blocks every few lines, or at least every chunk) for additional detail. These can not only help the reader but also help future-you when you go back to look at some code you wrote and are trying to figure out what it does and why you even wrote it in the first place. 
+    
+    Make sure you also provide a correct written answer to your research question(s) and interpretations of all plots and tables included in your project.
+    
+    **I'm really emphasizing this in the final project because I want you to be able to show this project off to future potential data science employers as part of a "portfolio." Being able not to just promise things, but to *show* your skills is incredibly helpful in getting a job. A *clean, well-organized* analytical document will go a long way in interviews, I assure you.**
+
+3. A description and *basic* exploration of the dataset. Hopefully you mostly already did this in the Proposal. (1 pt)
+
+4. At least one research question, clearly articulated. (1 pts)
+
+5. You should have chosen a dataset and question(s) that, before you can answer it/them, requires quite a bit of "real world style" data cleaning. You must demonstrate your skills in **5** of the following: (10 pts)
+
+    i) Data reshaping (changing the number of columns or rows by pivoting)
+    ii) Splitting or combining values across columns (separating and uniting)
+    iii) Cleaning variable names
+    iv) Identifying and cleaning missing observations or values or `NA` and `NaN` and `NULL` values
+    v) Re-coding variable values (for example, changing a state abbreviation to the full state name; or changing a "1" for a race variable to "White")
+    vi) Cleaning strings (anything from the `stringr` package; if it requires regular expressions, this counts for **2**)
+    vii) Cleaning factors (anything from the `forcats` package)
+    viii) Cleaning or modifying dates (anything from the `lubridate` package)
+
+6. Once your data is clean, answer your research question(s) with at least 2 visualizations of different types. (3 pts)
+    
+    What's a "type?" Different geoms or combinations of geoms.
+    
+    Adhere to the layout and graphic design guidance you've received throughout this course and in feedback on your assignments. Everything on the charts should be human-readable, easily separated or laid out to allow the answering of your research questions with a quick visual scan, a good legend position, and there should be no extraneous elements.
+
+    **At least one of your visualizations must be of an advanced type we learned in QTM 151 (map or interactive `plotly` plot).**
+    
+    Make sure to describe and interpret these *briefly* in nearby text.
+    
+------PROPOSAL BEGINS BELOW--------
+
+## Load packages and import the dataset of interest
+
+The packages `tidyverse`, `skimr`, `janitor` and `pander` are loaded to facilitate later data analysis and visualizations.
+```{r}
+pacman::p_load(tidyverse, skimr, janitor, pander,lubridate)
+avengers <- read_csv("./avengers.csv")
+```
+The csv file `avengers.csv` is obtained from this [link](https://www.kaggle.com/fivethirtyeight/fivethirtyeight-avengers-dataset?select=avengers.csv). It contains 173 observations of 21 variables, describing the Avengers from the Marvel Comics up until April 30, 2015. 
+
+## Explore the dataset
+
+Before raising our research question and getting into data cleaning, first we want to take a look at the current structure and variables of the dataset.
+```{r}
+head(avengers, 10)
+```
+From the first 10 rows of the data frame, we can see that each observation in the dataset represents an Avenger from the comic books. The variables describing an observation include the name (or alias), gender, number of comic books that character appeared in as of April 30, 2015, and most importantly, the number of deaths and returns the character experienced from their first appearance to April 30, 2015. 
+
+Next, we want to figure out each variable's data type, and have a brief idea about the locations of the missing values in the dataset.
+```{r}
+skim(avengers)
+```
+
+From `skim()`, we notice that except three numerical variables `Appearances`, `Year`, and `Years since joining`, all the other variables are in character type.
+
+Also, it shows that most of the missing values are allocated at the variables describing the number of deaths/returns of the Avenger, and also the variable `Probationary Introl`. This makes sense because not all Avengers experienced many deaths, recoveries, or were given probationary status. Some names of the Avengers are missing, but we can fill in those values since the names of Avengers are included in their URLs.
+
+Meanwhile,from the max, min, mean, and quartiles of the three numeric variables, it seems like there is no obvious implausible values.
+
+```{r}
+get_dupes(avengers)
+```
+Lastly, `get_dupes()` shows that there doesn't seem to be duplicated observations in the `avengers` dataset.
+
+## Data Dictionary
+
+To explain the variables more comprehensively, we include a data dictionary of the `avengers` dataset:
+```{r echo = FALSE}
+Variable <- c("URL", "Name/Alias", "Appearances", "Current?", "Gender", "Probationary Introl", "Full/Reserve Avengers Intro", "Year", "Years since joining", "Honorary", "Death1", "Return1", "Death2", "Return2", "Death3", "Return3", "Death4", "Return4", "Death5", "Return5", "Notes")
+
+Definition <- c("The URL of the comic character on the Marvel Wikia",
+                "The full name or alias of the character",
+                "The number of comic books that character appeared in as of April 30, 2015",
+                "Is the member currently active on an avengers affiliated team?",
+                "The recorded gender of the character",
+                "Sometimes the character was given probationary status as an Avenger, this is the date that happened",
+                "The month and year the character was introduced as a full or reserve member of the Avengers",
+                "The year the character was introduced as a full or reserve member of the Avengers",
+                "2015 minus the year",
+                "The status of the avenger, if they were given \"Honorary\" Avenger status, if they are simply in the \"Academy,\" or \"Full\" otherwise",
+                "Yes if the Avenger died, No if not.",
+                "Yes if the Avenger returned from their first death, No if they did not, blank if not applicable",
+                "Yes if the Avenger died a second time after their revival, No if they did not, blank if not applicable",
+                "Yes if the Avenger returned from their second death, No if they did not, blank if not applicable",
+                "Yes if the Avenger died a third time after their second revival, No if they did not, blank if not applicable",
+                "Yes if the Avenger returned from their third death, No if they did not, blank if not applicable",
+                "Yes if the Avenger died a fourth time after their third revival, No if they did not, blank if not applicable",
+                "Yes if the Avenger returned from their fourth death, No if they did not, blank if not applicable",
+                "Yes if the Avenger died a fifth time after their fourth revival, No if they did not, blank if not applicable",
+                "Yes if the Avenger returned from their fifth death, No if they did not, blank if not applicable",
+                "Descriptions of deaths and resurrections.")
+
+data_dictionary <- data.frame(Variable, Definition)
+
+pander::pander(data_dictionary, split.cell = 50, split.table = Inf, justify = "left")
+```
+
+## Research Questions
+
+Based on the dataset, here are some research questions we might want to investigate:
+
+1. Is a male Avenger more likely to appear more frequently than a female Avenger? How about the appearance frequency for different Honorary levels?
+
+   -> mutate: `frequency` = `Appearances`/`Years since joining` 
+   -> calculate mean frequency for male and female avengers 
+   -> a table or a bar plot 
+   -> maybe group by `Honorary` and then use `position = "dodge"` to see the detailed frequency for different honorary levels, too. (histogram)
+  
+  
+  
+2. Are the number of deaths of Avengers related to the years since they've been introduced?
+
+   -> apply `pivot_longer` to combine variables `death1` ~ `death5` into `number_of_deaths`
+   -> `Years since joining` vs `number_of_deaths` (plotly scatter plot + `add_lines()`)
+  
+  
+  
+3. Which classification/gender of Avenger is most at risk of death?
+
+   -> `Honorary` vs `number_of_deaths` (Histogram/bar chart)
+   -> maybe group by `Gender` and then use `position = "dodge"` to see the detailed frequency for different genders, too.
+  
+  
+## The expected cleaning steps
+
+```{r}
+avengers<-avengers %>%  
+  clean_names() %>% 
+  mutate(gender=as.factor(gender),
+         honorary=as.factor(honorary),
+         month=as.character(str_extract_all(full_reserve_avengers_intro,"[A-Za-z]+")),
+         month=match(month,month.abb),
+         joining_time=format(as_date(paste(year,month,1,sep="-")), "%Y-%m"),
+         name_alias=case_when(is.na(name_alias) ~ str_match(url,"http\\:\\/\\/marvel\\.wikia\\.com\\/([^\\()]+)")[,2] %>% str_replace_all("_$","") %>% str_replace_all("_"," "), 
+                          TRUE ~ name_alias),
+         across(death1:return5, ~case_when(.x == "YES" ~ TRUE,
+                                          TRUE ~ FALSE)), 
+         total_death = death1+death2+death3+death4+death5,
+         total_return = return1+return2+return3+return4+return5,
+         current=case_when(current=="YES"~TRUE,
+                   TRUE~FALSE))
+
+avengers<-avengers %>% 
+  select(name_alias,appearances,current,gender,joining_time,honorary,total_death,total_return) %>% 
+  rename(name=name_alias)
+
+skim(avengers)
+```
+i) Data reshaping (`pivot_longer()` or `pivot_wider()`):
+Combine `death1` ~ `death5` into a numeric variable `number_of_death` which stores the number of deaths experienced by an Avenger.
+
+ii) Splitting (`separate()`):
+Separate the `Full/Reserve Avengers Intro` into `month` and `year` (and then discard `year` since it's repetitive with the variable `Year`).
+
+iii) Cleaning variable names
+
+iv) Cleaning missing observations & cleaning strings:
+Fill in the missing observations in the `Name/Alias` variable with names available from `URL` **using regular expression**.
+
+v) Cleaning factors:
+Order `Current?`, `Gender`, and `Honorary` into their statuses.
+(not sure if it's correct, we can do this now without using the `forcats` package)
+
+vi) Cleaning dates:
+Deal with `Full/Reserve Avengers Intro` and `Year`
+
+vii) Changing data types:
+Change character variables into Boolean/factor type.(e.g. `Gender` to factor type)
+(We're not sure if this satisfies any data cleaning skills listed above.)
